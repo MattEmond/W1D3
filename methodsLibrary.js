@@ -20,8 +20,23 @@ var library = {
                       name: "Other Playlist",
                       tracks: ["t03"]
                     }
-             }
+             },
+
+  printPlaylists: function() {
+  for (item in library.playlists) {
+    return this.item + ": " + this.playlists[item].name + " - " + this.playlists[item].tracks.length + " tracks"
+  }
+},
+
+
+
+
+
+
 }
+
+
+library.printPlaylists()
 
 // FUNCTIONS TO IMPLEMENT:
 
