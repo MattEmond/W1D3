@@ -24,7 +24,20 @@ var library = {
 
   printPlaylists: function() {
   for (item in library.playlists) {
-    return this.item + ": " + this.playlists[item].name + " - " + this.playlists[item].tracks.length + " tracks"
+    console.log(item + ": " + this.playlists[item].name + " - " + this.playlists[item].tracks.length + " tracks")
+  }
+},
+
+  printTracks: function() {
+  for (track in library.tracks) {
+    console.log(this.tracks[track].id + ": " + this.tracks[track].name + " by " + this.tracks[track].artist + " (" + this.tracks[track].album + ")")
+  }
+},
+
+  printPlaylist: function (playlistId) {
+  console.log(this.playlists.p01.id + ": " + this.playlists.p01.name + " - " + this.playlists.p01.tracks.length + " tracks")
+  for (songs of library.playlists.p01.tracks) {
+    console.log(this.tracks[songs].id + ": " + this.tracks[songs].name + " by " + this.tracks[songs].artist + " (" + this.tracks[songs].album + ")")
   }
 },
 
@@ -33,10 +46,12 @@ var library = {
 
 
 
+
 }
 
-
-library.printPlaylists()
+// library.printPlaylists()
+// library.printTracks()
+// library.printPlaylist()
 
 // FUNCTIONS TO IMPLEMENT:
 
@@ -151,7 +166,7 @@ var printSearchResults = function(query) {
     }
   }
 }
-printSearchResults("Three")
+//printSearchResults("Three")
 
 
 
