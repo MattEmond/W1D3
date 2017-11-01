@@ -23,35 +23,84 @@ var library = {
              },
 
   printPlaylists: function() {
-  for (item in library.playlists) {
+  for (item in this.playlists) {
     console.log(item + ": " + this.playlists[item].name + " - " + this.playlists[item].tracks.length + " tracks")
   }
 },
 
   printTracks: function() {
-  for (track in library.tracks) {
+  for (track in this.tracks) {
     console.log(this.tracks[track].id + ": " + this.tracks[track].name + " by " + this.tracks[track].artist + " (" + this.tracks[track].album + ")")
   }
 },
 
   printPlaylist: function (playlistId) {
   console.log(this.playlists.p01.id + ": " + this.playlists.p01.name + " - " + this.playlists.p01.tracks.length + " tracks")
-  for (songs of library.playlists.p01.tracks) {
+  for (songs of this.playlists.p01.tracks) {
     console.log(this.tracks[songs].id + ": " + this.tracks[songs].name + " by " + this.tracks[songs].artist + " (" + this.tracks[songs].album + ")")
   }
 },
 
+  addTrackToPlaylist: function (trackId, playlistId) {
+  this.playlists[playlistId].tracks.push(trackId)
+},
 
+  uid: function() {
+  return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+},
 
+  addTrack: function (name, artist, album) {
+  var id = "t" + this.uid()
+  this.tracks[id] = {}
+  this.tracks[id].id = id
+  this.tracks[id].name = name
+  this.tracks[id].artist = artist
+  this.tracks[id].album = album
+},
 
+  addPlaylist: function (name) {
+  var id = 'p' + this.uid()
+  this.playlists[id] = {}
+  this.playlists[id].id = id
+  this.playlists[id].name = name
+  this.playlists[id].tracks = ['t05']
+  console.log(library.playlists)
+},
 
+  printSearchResults: function(query) {
+  for (track in this.tracks) {
+    var id = this.tracks[track].id
+    var name = this.tracks[track].name
+    var artist = this.tracks[track].artist
+    var album = this.tracks[track].album
+    var re = query
+    var nameValues = name.search(re)
+    var artistValues = artist.search(re)
+    var albumValues = album.search(re)
+    if (nameValues > 0) {
+      console.log("Track: " + id + ", Name: " + name)
+    } else {
 
+    }
+    if (artistValues > 0) {
+      conosole.log("Track: " + id + ", Artist: " + artist)
+    } else {
 
+    }
+    if (albumValues > 0) {
+      console.log("Track: " + id + ", Album: " + album)
+    } else {
+
+    }
+  }
+},
 }
 
 // library.printPlaylists()
 // library.printTracks()
 // library.printPlaylist()
+library.addPlaylist("Tunes")
+// library.printSearchResults("Three")
 
 // FUNCTIONS TO IMPLEMENT:
 
