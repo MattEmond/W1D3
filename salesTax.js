@@ -8,7 +8,7 @@ var companySalesData = [
   {
     name: "Telus",
     province: "BC",
-    sales: [ 100, 200, 400 ],
+    sales: [ 100, 200, 400 ]
   },
   {
     name: "Bombardier",
@@ -23,18 +23,7 @@ var companySalesData = [
 ];
 
 function calculateSalesTax(salesData, taxRates) {
-  var salesResults = {}
-  var taxResults = {}
-  salesData.forEach(function(company) {
-    salesResults[company.name] = {}
-   let totalSales = company.sales.reduce(function(sum, value){
-      return sum + value
-    });
-
-   console.log(totalSales)
-   console.log(salesResults)
-})
-
+  // Implement your code here
 }
 
 var results = calculateSalesTax(companySalesData, salesTaxRates);
@@ -50,11 +39,4 @@ var results = calculateSalesTax(companySalesData, salesTaxRates);
     totalTaxes: 40
   }
 }
-
-I want to add all the sales together
-I want to take total sales * tax rate
-
-
 */
-
-// console.log(companySalesData)
