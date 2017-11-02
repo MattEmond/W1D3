@@ -30,7 +30,16 @@ function calculateSalesTax(salesData, taxRates) {
     const total = company.sales.reduce(function(sum, value) {
       return sum + value;
     }, 0);
+
+
     //tax stuff
+    /*
+      if output does not contain tax rates
+      take sales for each company and figure out tax rate (total sales * tax)
+        ex: bombardier = 800 * .05
+
+
+    */
 
 
     // if output doesn't have company
