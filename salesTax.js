@@ -30,6 +30,8 @@ function calculateSalesTax(salesData, taxRates) {
     const total = company.sales.reduce(function(sum, value) {
       return sum + value;
     }, 0);
+    //tax stuff
+
 
     // if output doesn't have company
     if (output[company.name] === undefined) {
