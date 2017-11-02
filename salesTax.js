@@ -4,6 +4,7 @@ var salesTaxRates = {
   SK: 0.10
 };
 
+// array of objects
 var companySalesData = [
   {
     name: "Telus",
@@ -23,8 +24,27 @@ var companySalesData = [
 ];
 
 function calculateSalesTax(salesData, taxRates) {
-  // Implement your code here
+  var output = {}
+  // for each object (company) in the array of objects
+  for (company of salesData) {
+    const total = company.sales.reduce(function(sum, value) {
+      return sum + value;
+    }, 0);
+
+    // if output doesn't have company
+    if (output[company.name] === undefined) {
+      output[company.name] = {
+        totalSales: 0,
+        totalTaxes: 0
+      }
+    }
+
+    output[company.name].totalSales += total;
+  }
+  console.log(output)
+  return output
 }
+
 
 var results = calculateSalesTax(companySalesData, salesTaxRates);
 
@@ -40,3 +60,15 @@ var results = calculateSalesTax(companySalesData, salesTaxRates);
   }
 }
 */
+
+/*
+Add new object √
+add companies to object
+calculate total sales per company
+calculate tax per company
+*/
+
+
+
+
+
