@@ -99,7 +99,7 @@ var library = {
 // library.printPlaylists()
 // library.printTracks()
 // library.printPlaylist()
-library.addPlaylist("Tunes")
+// library.addPlaylist("Tunes")
 // library.printSearchResults("Three")
 
 // FUNCTIONS TO IMPLEMENT:
